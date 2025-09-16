@@ -1,145 +1,171 @@
-/* Reset de Estilos */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* Corpo */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #fafafa;
     color: #333;
-    line-height: 1.6;
+    font-size: 16px;
 }
 
 /* Header */
-.header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #111;
-    color: #fff;
+    background-color: #000;
+    color: white;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 10;
 }
 
-.logo h1 {
+header .logo h1 {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #f39c12;
+    letter-spacing: 2px;
 }
 
-.nav-bar ul {
-    display: flex;
+header nav ul {
     list-style: none;
+    display: flex;
+    gap: 30px;
 }
 
-.nav-bar ul li {
-    margin-right: 20px;
-}
-
-.nav-bar ul li a {
+header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: all 0.3s;
+    font-weight: 500;
 }
 
-.nav-bar ul li a:hover {
-    color: #f39c12;
+header .icons input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
 }
 
-.icon-bar .icon {
+header .icons a {
     color: white;
-    margin-left: 15px;
-    font-size: 1.4rem;
-    transition: color 0.3s;
-}
-
-.icon-bar .icon:hover {
-    color: #f39c12;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
 
 /* Hero Section */
 .hero {
-    background: url('hero-bg.jpg') no-repeat center center/cover;
+    background: url('cidade-grafite.jpg') no-repeat center center/cover;
+    height: 80vh;
     color: white;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h2 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-}
-
-.hero .btn {
-    background-color: #f39c12;
-    color: white;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-.hero .btn:hover {
-    background-color: #e67e22;
-}
-
-/* Categorias */
-.categories {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.categories .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-}
-
-.category-grid {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
-.category-item {
-    width: 30%;
-    transition: transform 0.3s;
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
-.category-item:hover {
-    transform: scale(1.05);
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.category-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.category-item p {
-    font-size: 1.2rem;
-    margin-top: 10px;
+.cta-btn {
+    padding: 12px 30px;
+    background-color: #f1c40f;
+    color: #222;
+    text-decoration: none;
     font-weight: 600;
+    border-radius: 5px;
 }
 
-/* Produtos em Destaque */
-.featured-products {
-    padding: 80px 20px;
+/* Seção de Produtos */
+.products {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.product-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 8px;
+}
+
+.product-item p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.product-item a {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #f1c40f;
+    color: #222;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Testemunhos */
+.testimonials {
+    padding: 50px 20px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+.testimonial {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
     background-color: #111;
     color: white;
+    padding: 30px 20px;
     text-align: center;
 }
 
-.featured-products .section-title {
-    font-size: 2.5rem
+footer .social-links a {
+    color: #f1c40f;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+footer p {
+    margin-top: 20px;
+}
