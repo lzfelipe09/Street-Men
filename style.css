@@ -1,0 +1,145 @@
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #111;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #f39c12;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-bar ul li {
+    margin-right: 20px;
+}
+
+.nav-bar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    color: #f39c12;
+}
+
+.icon-bar .icon {
+    color: white;
+    margin-left: 15px;
+    font-size: 1.4rem;
+    transition: color 0.3s;
+}
+
+.icon-bar .icon:hover {
+    color: #f39c12;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.hero .btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #e67e22;
+}
+
+/* Categorias */
+.categories {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.categories .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    width: 30%;
+    transition: transform 0.3s;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+}
+
+.category-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.category-item p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Produtos em Destaque */
+.featured-products {
+    padding: 80px 20px;
+    background-color: #111;
+    color: white;
+    text-align: center;
+}
+
+.featured-products .section-title {
+    font-size: 2.5rem
