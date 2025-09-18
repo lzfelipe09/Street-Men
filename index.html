@@ -4,8 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Street Men - E-commerce</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <style>
+        /* Resetando estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #111;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #d3a430;
+        }
+
+        /* BANNER */
+        .banner {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .banner-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        /* PRODUTOS */
+        .produtos {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .produtos h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .produto-lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .produto {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .produto img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .produto:hover {
+            transform: translateY(-10px);
+        }
+
+        .produto h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .produto p {
+            margin-top: 5px;
+            color: #888;
+        }
+
+        /* SOBRE */
+        .sobre {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .sobre h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* CONTATO */
+        .contato {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .contato form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contato input, .contato textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contato button {
+            padding: 10px 20px;
+            background-color: #d3a430;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contato button:hover {
+            background-color: #f59e42;
+        }
+
+        /* RODAPÉ */
+        footer {
+            background-color: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .social-media a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer .social-media a:hover {
+            color: #d3a430;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul {
+                flex-direction: column;
+            }
+
+            .produto-lista {
+                grid-template-columns: 1fr;
+            }
+
+            .banner {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- HEADER -->
@@ -26,7 +219,7 @@
     <!-- BANNER PRINCIPAL -->
     <section id="banner" class="banner">
         <div class="banner-carousel">
-            <img src="images/banner1.jpg" alt="Promoção 1">
+            <img src="images/banner1.jpg" alt="Promoção 1" style="opacity: 1;">
             <img src="images/banner2.jpg" alt="Promoção 2">
             <img src="images/banner3.jpg" alt="Promoção 3">
         </div>
@@ -92,5 +285,26 @@
         </div>
         <p>&copy; 2025 Street Men. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Função para alternar a visibilidade do banner (Carrossel de Imagens)
+        document.addEventListener('DOMContentLoaded', () => {
+            const banners = document.querySelectorAll('.banner-carousel img');
+            let index = 0;
+
+            // Função para mostrar a imagem ativa
+            const showBanner = () => {
+                banners.forEach((banner, i) => {
+                    banner.style.opacity = (i === index) ? '1' : '0';
+                });
+            };
+
+            // Intervalo para alternar os banners
+            setInterval(() => {
+                index = (index + 1) % banners.length;
+                showBanner();
+            }, 5000);  // Troca de banner a cada 5 segundos
+        });
+    </script>
 </body>
 </html>
