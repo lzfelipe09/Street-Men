@@ -1,310 +1,283 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Street Men - E-commerce</title>
-    <style>
-        /* Resetando estilos */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Loja de roupas online com produtos exclusivos e alta qualidade. Roupas para todos os estilos!">
+  <meta name="keywords" content="loja de roupas, moda, camisetas, calças, vestidos, e-commerce">
+  <meta name="author" content="João Pereira">
+  <title>Loja de Roupas - Moda Exclusiva e Confortável</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link para seu CSS -->
+  <style>
+    /* Estilos base para o site */
 
-        /* Corpo */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-        /* HEADER */
-        header {
-            background-color: #111;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
 
-        header .logo img {
-            height: 50px;
-        }
+    header h1 {
+      margin: 0;
+    }
 
-        header nav ul {
-            list-style: none;
-            display: flex;
-        }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
 
-        header nav ul li {
-            margin: 0 15px;
-        }
+    nav ul li {
+      margin: 0 15px;
+    }
 
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
 
-        header nav ul li a:hover {
-            color: #d3a430;
-        }
+    .hero {
+      background-image: url('banner.jpg'); /* Altere para o caminho da sua imagem */
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-        /* BANNER */
-        .banner {
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-        }
+    .hero h2 {
+      font-size: 3rem;
+      margin: 0;
+    }
 
-        .banner-carousel img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 40px 0;
+    }
 
-        /* PRODUTOS */
-        .produtos {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #fff;
-        }
+    .grid-produtos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
 
-        .produtos h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+    .produto-item {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
 
-        .produto-lista {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+    .produto-item:hover {
+      transform: scale(1.05);
+    }
 
-        .produto {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+    .produto-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
 
-        .produto img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
+    .produto-info h3 {
+      margin: 10px 0;
+      font-size: 1.4rem;
+      color: #333;
+    }
 
-        .produto:hover {
-            transform: translateY(-10px);
-        }
+    .produto-info p {
+      font-size: 1rem;
+      color: #666;
+    }
 
-        .produto h3 {
-            margin-top: 10px;
-            font-size: 1.2em;
-            color: #333;
-        }
+    .preco {
+      font-size: 1.2rem;
+      color: #e74c3c;
+      font-weight: bold;
+      margin-top: 10px;
+    }
 
-        .produto p {
-            margin-top: 5px;
-            color: #888;
-        }
+    .subtitulo-produto {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      text-align: left;
+      color: #333;
+    }
 
-        /* SOBRE */
-        .sobre {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #f9f9f9;
-        }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
 
-        .sobre h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+    .nota-estrelas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        /* CONTATO */
-        .contato {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #fff;
-        }
+    .estrela {
+      color: #f39c12;
+      font-size: 1.5rem;
+    }
 
-        .contato form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
+    .meia {
+      color: #f39c12;
+      font-size: 1.5rem;
+      width: 50%;
+      overflow: hidden;
+      display: inline-block;
+    }
 
-        .contato input, .contato textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+    .nota-numero {
+      font-size: 1rem;
+      margin-left: 10px;
+      color: #666;
+    }
 
-        .contato button {
-            padding: 10px 20px;
-            background-color: #d3a430;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .comentario {
+      margin-bottom: 20px;
+      font-style: italic;
+      color: #555;
+    }
 
-        .contato button:hover {
-            background-color: #f59e42;
-        }
+    .autor {
+      text-align: right;
+      font-weight: bold;
+      margin-top: 5px;
+    }
 
-        /* RODAPÉ */
-        footer {
-            background-color: #111;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+    #contato a {
+      color: #e74c3c;
+      text-decoration: none;
+    }
 
-        footer .social-media a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
+    @media (max-width: 768px) {
+      .grid-produtos {
+        grid-template-columns: 1fr 1fr;
+      }
 
-        footer .social-media a:hover {
-            color: #d3a430;
-        }
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    @media (max-width: 480px) {
+      .grid-produtos {
+        grid-template-columns: 1fr;
+      }
 
-            header nav ul {
-                flex-direction: column;
-            }
-
-            .produto-lista {
-                grid-template-columns: 1fr;
-            }
-
-            .banner {
-                height: 300px;
-            }
-        }
-    </style>
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <img src="images/logo.png" alt="Street Men">
+
+  <header>
+    <h1>Loja de Roupas - Moda Exclusiva</h1>
+    <nav>
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Encontre seu Estilo Perfeito</h2>
+  </section>
+
+  <section id="produtos" class="container">
+    <h2>Nosso Catálogo</h2>
+
+    <div class="grid-produtos">
+
+      <!-- Camisetas -->
+      <div class="subtitulo-produto">Camisetas</div>
+
+      <div class="produto-item">
+        <img src="camiseta-preta.png" alt="Camiseta Preta Estilosa" />
+        <div class="produto-info">
+          <h3>Camiseta Preta Estilosa</h3>
+          <p>Camiseta básica preta com design minimalista e confortável, perfeita para o dia a dia.</p>
+          <div class="preco">R$ 59,00</div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- BANNER PRINCIPAL -->
-    <section id="banner" class="banner">
-        <div class="banner-carousel">
-            <img src="images/banner1.jpg" alt="Promoção 1" style="opacity: 1;">
-            <img src="images/banner2.jpg" alt="Promoção 2">
-            <img src="images/banner3.jpg" alt="Promoção 3">
+      </div>
+      <div class="produto-item">
+        <img src="camiseta-branca.png" alt="Camiseta Branca Básica" />
+        <div class="produto-info">
+          <h3>Camiseta Branca Básica</h3>
+          <p>Modelagem simples e clássica, ideal para combinações versáteis em qualquer ocasião.</p>
+          <div class="preco">R$ 49,00</div>
         </div>
-    </section>
-
-    <!-- PRODUTOS -->
-    <section id="produtos" class="produtos">
-        <h2>Produtos</h2>
-        <div class="produto-lista">
-            <div class="produto">
-                <img src="images/produto1.jpg" alt="Camiseta">
-                <h3>Camiseta Urbana</h3>
-                <p>R$ 99,90</p>
-                <p>Descrição breve sobre o produto.</p>
-            </div>
-            <div class="produto">
-                <img src="images/produto2.jpg" alt="Calça">
-                <h3>Calça Skinny</h3>
-                <p>R$ 179,90</p>
-                <p>Descrição breve sobre o produto.</p>
-            </div>
-            <div class="produto">
-                <img src="images/produto3.jpg" alt="Jaqueta">
-                <h3>Jaqueta de Couro</h3>
-                <p>R$ 299,90</p>
-                <p>Descrição breve sobre o produto.</p>
-            </div>
-            <div class="produto">
-                <img src="images/produto4.jpg" alt="Tênis">
-                <h3>Tênis Casual</h3>
-                <p>R$ 199,90</p>
-                <p>Descrição breve sobre o produto.</p>
-            </div>
+      </div>
+      <div class="produto-item">
+        <img src="camiseta-grafite.png" alt="Camiseta Grafite Estilosa" />
+        <div class="produto-info">
+          <h3>Camiseta Grafite Estilosa</h3>
+          <p>Estilo urbano com um toque descolado. Perfeita para quem ama a moda casual com personalidade.</p>
+          <div class="preco">R$ 65,00</div>
         </div>
-    </section>
+      </div>
 
-    <!-- SOBRE -->
-    <section id="sobre" class="sobre">
-        <h2>Sobre a Street Men</h2>
-        <p>A Street Men é uma marca especializada em roupas masculinas de estilo urbano, oferecendo peças que misturam conforto e estilo. Nosso foco é proporcionar a melhor experiência de moda para homens modernos e ousados.</p>
-    </section>
+      <!-- Calças -->
+      <div class="subtitulo-produto">Calças</div>
 
-    <!-- CONTATO -->
-    <section id="contato" class="contato">
-        <h2>Contato</h2>
-        <form action="#" method="POST">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <!-- RODAPÉ -->
-    <footer>
-        <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+      <div class="produto-item">
+        <img src="calca-jeans.png" alt="Calça Jeans Slim" />
+        <div class="produto-info">
+          <h3>Calça Jeans Slim</h3>
+          <p>Jeans com modelagem slim, confortável e ajustada ao corpo. Ideal para looks urbanos.</p>
+          <div class="preco">R$ 139,00</div>
         </div>
-        <p>&copy; 2025 Street Men. Todos os direitos reservados.</p>
-    </footer>
+      </div>
+      <div class="produto-item">
+        <img src="calca-cargo.png" alt="Calça Cargo Militar" />
+        <div class="produto-info">
+          <h3>Calça Cargo Militar</h3>
+          <p>Calça cargo com bolsos laterais, perfeita para um estilo casual e prático.</p>
+          <div class="preco">R$ 129,00</div>
+        </div>
+      </div>
 
-    <script>
-        // Função para alternar a visibilidade do banner (Carrossel de Imagens)
-        document.addEventListener('DOMContentLoaded', () => {
-            const banners = document.querySelectorAll('.banner-carousel img');
-            let index = 0;
+      <!-- Vestidos -->
+      <div class="subtitulo-produto">Vestidos</div>
 
-            // Função para mostrar a imagem ativa
-            const showBanner = () => {
-                banners.forEach((banner, i) => {
-                    banner.style.opacity = (i === index) ? '1' : '0';
-                });
-            };
-
-            // Intervalo para alternar os banners
-            setInterval(() => {
-                index = (index + 1) % banners.length;
-                showBanner();
-            }, 5000);  // Troca de banner a cada 5 segundos
-        });
-    </script>
-</body>
-</html>
+      <div class="produto-item">
+        <img src="vestido-floral.png" alt="Vestido Floral Elegante" />
+        <div class="produto-info">
+          <h3>Vestido Floral Elegante</h3>
+          <p>Vestido de verão com estampa floral delicada. Perfeito para eventos casuais e descontraídos.</p>
+          <div class="preco">R$ 179,00</div>
+        </div>
+      </div>
+      <div class="produto-item">
+        <img src="vestido-preto.png" alt="Vestido Preto Básico" />
+        <div class="produto-info">
+          <h3>Vestido Preto Básico</h3>
+          <p>Um
