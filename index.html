@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -33,10 +33,14 @@
             z-index: 10;
         }
 
+        /* Logo com fundo de imagem */
         header .logo h1 {
             font-size: 2.5rem;
             font-weight: 600;
             letter-spacing: 2px;
+            background: url('logo-bg.jpg') no-repeat center center/cover; /* Imagem de fundo para o logo */
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         header nav ul {
@@ -114,12 +118,15 @@
             gap: 30px;
         }
 
+        /* Produto com fundo de imagem */
         .product-item {
-            background-color: #f4f4f4;
+            background: url('produto-fundo.jpg') no-repeat center center/cover; /* Imagem de fundo do produto */
+            background-size: cover;
             padding: 20px;
             border-radius: 8px;
             width: 30%;
             text-align: center;
+            color: white;
         }
 
         .product-item img {
