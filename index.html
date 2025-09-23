@@ -7,126 +7,213 @@
     <meta name="keywords" content="loja de roupas, moda, camisetas, calças, vestidos, e-commerce">
     <meta name="author" content="João Pereira">
     <title>Loja de Roupas - Moda Exclusiva e Confortável</title>
-    <link rel="stylesheet" href="styles.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
 
-    <header>
-        <div class="container header-content">
-            <h1 class="logo">Moda Exclusiva</h1>
-            <nav>
-                <ul>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#avaliacoes">Avaliações</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <style>
+        /* Importação da fonte do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-    <main>
-        <section class="hero">
-            <div class="hero-overlay">
-                <h2>Encontre seu Estilo Perfeito</h2>
-            </div>
-        </section>
+        /* Estilos Globais e Reset Básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        <section id="produtos" class="container">
-            <h2>Nosso Catálogo</h2>
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
 
-            <h3 class="product-category-title">Camisetas</h3>
-            <div class="grid-produtos">
-                <div class="produto-item">
-                    <img src="https://via.placeholder.com/300x400.png?text=Camiseta+Preta" alt="Camiseta Preta Estilosa">
-                    <div class="produto-info">
-                        <h4>Camiseta Preta Estilosa</h4>
-                        <p>Camiseta básica preta com design minimalista e confortável, perfeita para o dia a dia.</p>
-                        <div class="preco">R$ 59,00</div>
-                    </div>
-                </div>
-                <div class="produto-item">
-                    <img src="https://via.placeholder.com/300x400.png?text=Camiseta+Branca" alt="Camiseta Branca Básica">
-                    <div class="produto-info">
-                        <h4>Camiseta Branca Básica</h4>
-                        <p>Modelagem simples e clássica, ideal para combinações versáteis em qualquer ocasião.</p>
-                        <div class="preco">R$ 49,00</div>
-                    </div>
-                </div>
-                <div class="produto-item">
-                    <img src="https://via.placeholder.com/300x400.png?text=Camiseta+Grafite" alt="Camiseta Grafite Estilosa">
-                    <div class="produto-info">
-                        <h4>Camiseta Grafite Estilosa</h4>
-                        <p>Estilo urbano com um toque descolado. Perfeita para quem ama a moda casual com personalidade.</p>
-                        <div class="preco">R$ 65,00</div>
-                    </div>
-                </div>
-            </div>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
 
-            <h3 class="product-category-title">Calças</h3>
-            <div class="grid-produtos">
-                <div class="produto-item">
-                    <img src="https://via.placeholder.com/300x400.png?text=Calça+Jeans" alt="Calça Jeans Slim">
-                    <div class="produto-info">
-                        <h4>Calça Jeans Slim</h4>
-                        <p>Jeans com modelagem slim, confortável e ajustada ao corpo. Ideal para looks urbanos.</p>
-                        <div class="preco">R$ 139,00</div>
-                    </div>
-                </div>
-                <div class="produto-item">
-                    <img src="https://via.placeholder.com/300x400.png?text=Calça+Cargo" alt="Calça Cargo Militar">
-                    <div class="produto-info">
-                        <h4>Calça Cargo Militar</h4>
-                        <p>Calça cargo com bolsos laterais, perfeita para um estilo casual e prático.</p>
-                        <div class="preco">R$ 129,00</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        h1, h2, h3, h4 {
+            color: #222;
+            margin-bottom: 20px;
+        }
 
-        <section id="avaliacoes" class="container">
-            <h2>O que nossos clientes dizem</h2>
-            <div class="avaliacoes-grid">
-                <div class="avaliacao-item">
-                    <div class="nota-estrelas">
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                    </div>
-                    <p class="comentario">"Entrega rápida e produto de alta qualidade! A camiseta é exatamente como na foto."</p>
-                    <p class="autor">- Ana S.</p>
-                </div>
-                <div class="avaliacao-item">
-                    <div class="nota-estrelas">
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela">&#9733;</span>
-                        <span class="estrela-vazia">&#9734;</span>
-                    </div>
-                    <p class="comentario">"Adorei o vestido floral! O tecido é macio e o caimento é perfeito. Recomendo!"</p>
-                    <p class="autor">- Beatriz C.</p>
-                </div>
-            </div>
-        </section>
+        /* Header e Navegação */
+        header {
+            background-color: #222;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-        <section id="contato" class="container">
-            <h2>Entre em Contato</h2>
-            <p>Se tiver alguma dúvida, entre em contato conosco:</p>
-            <p>E-mail: <a href="mailto:contato@lojaroupas.com">contato@lojaroupas.com</a></p>
-            <p>Telefone: (11) 99999-9999</p>
-        </section>
-    </main>
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Loja de Roupas. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
 
-</body>
-</html>
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Seção Hero (Banner) */
+        .hero {
+            background-image: url('https://via.placeholder.com/1600x600.png?text=Seu+Banner+de+Moda');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
+
+        /* Seção de Produtos */
+        #produtos {
+            text-align: center;
+        }
+
+        .product-category-title {
+            text-align: left;
+            margin-top: 40px;
+            font-size: 1.8rem;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding-top: 20px;
+        }
+
+        .produto-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .produto-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .produto-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .produto-info {
+            padding: 15px;
+        }
+
+        .produto-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .produto-info p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .preco {
+            font-size: 1.4rem;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Seção de Avaliações */
+        #avaliacoes {
+            text-align: center;
+        }
+
+        .avaliacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .avaliacao-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nota-estrelas {
+            color: #f39c12;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .comentario {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .autor {
+            font-weight: bold;
+            text-align: right;
+            color: #444;
+        }
+
+        /* Seção de Contato */
+        #contato {
+            text-align: center;
+        }
+
+        #contato p {
+            margin-bottom: 10px;
+        }
+
+        #contato a {
