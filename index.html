@@ -1,322 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Loja de roupas online com produtos exclusivos e alta qualidade. Roupas para todos os estilos!">
-  <meta name="keywords" content="loja de roupas, moda, camisetas, calças, vestidos, e-commerce">
-  <meta name="author" content="João Pereira">
-  <title>Loja de Roupas - Moda Exclusiva e Confortável</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link para seu CSS -->
-  <style>
-    /* Estilos base para o site */
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background-color: #333;
-      color: white;
-      padding: 10px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    .hero {
-      background-image: url('banner.jpg'); /* Altere para o caminho da sua imagem */
-      background-size: cover;
-      background-position: center;
-      height: 400px;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    .container {
-      width: 80%;
-      margin: auto;
-      padding: 40px 0;
-    }
-
-    .grid-produtos {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .produto-item {
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      padding: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .produto-item:hover {
-      transform: scale(1.05);
-    }
-
-    .produto-item img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .produto-info h3 {
-      margin: 10px 0;
-      font-size: 1.4rem;
-      color: #333;
-    }
-
-    .produto-info p {
-      font-size: 1rem;
-      color: #666;
-    }
-
-    .preco {
-      font-size: 1.2rem;
-      color: #e74c3c;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .subtitulo-produto {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      text-align: left;
-      color: #333;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .nota-estrelas {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .estrela {
-      color: #f39c12;
-      font-size: 1.5rem;
-    }
-
-    .meia {
-      color: #f39c12;
-      font-size: 1.5rem;
-      width: 50%;
-      overflow: hidden;
-      display: inline-block;
-    }
-
-    .nota-numero {
-      font-size: 1rem;
-      margin-left: 10px;
-      color: #666;
-    }
-
-    .comentario {
-      margin-bottom: 20px;
-      font-style: italic;
-      color: #555;
-    }
-
-    .autor {
-      text-align: right;
-      font-weight: bold;
-      margin-top: 5px;
-    }
-
-    #contato a {
-      color: #e74c3c;
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .grid-produtos {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero h2 {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .grid-produtos {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h2 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Loja de roupas online com produtos exclusivos e alta qualidade. Roupas para todos os estilos!">
+    <meta name="keywords" content="loja de roupas, moda, camisetas, calças, vestidos, e-commerce">
+    <meta name="author" content="João Pereira">
+    <title>Loja de Roupas - Moda Exclusiva e Confortável</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <h1>Loja de Roupas - Moda Exclusiva</h1>
-    <nav>
-      <ul>
-        <li><a href="#produtos">Produtos</a></li>
-        <li><a href="#avaliacoes">Avaliações</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>Encontre seu Estilo Perfeito</h2>
-  </section>
-
-  <section id="produtos" class="container">
-    <h2>Nosso Catálogo</h2>
-
-    <div class="grid-produtos">
-
-      <!-- Camisetas -->
-      <div class="subtitulo-produto">Camisetas</div>
-
-      <div class="produto-item">
-        <img src="camiseta-preta.png" alt="Camiseta Preta Estilosa" />
-        <div class="produto-info">
-          <h3>Camiseta Preta Estilosa</h3>
-          <p>Camiseta básica preta com design minimalista e confortável, perfeita para o dia a dia.</p>
-          <div class="preco">R$ 59,00</div>
+    <header>
+        <div class="container header-content">
+            <h1 class="logo">Moda Exclusiva</h1>
+            <nav>
+                <ul>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#avaliacoes">Avaliações</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-      <div class="produto-item">
-        <img src="camiseta-branca.png" alt="Camiseta Branca Básica" />
-        <div class="produto-info">
-          <h3>Camiseta Branca Básica</h3>
-          <p>Modelagem simples e clássica, ideal para combinações versáteis em qualquer ocasião.</p>
-          <div class="preco">R$ 49,00</div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay">
+                <h2>Encontre seu Estilo Perfeito</h2>
+            </div>
+        </section>
+
+        <section id="produtos" class="container">
+            <h2>Nosso Catálogo</h2>
+
+            <h3 class="product-category-title">Camisetas</h3>
+            <div class="grid-produtos">
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Camiseta+Preta" alt="Camiseta Preta Estilosa">
+                    <div class="produto-info">
+                        <h4>Camiseta Preta Estilosa</h4>
+                        <p>Camiseta básica preta com design minimalista e confortável, perfeita para o dia a dia.</p>
+                        <div class="preco">R$ 59,00</div>
+                    </div>
+                </div>
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Camiseta+Branca" alt="Camiseta Branca Básica">
+                    <div class="produto-info">
+                        <h4>Camiseta Branca Básica</h4>
+                        <p>Modelagem simples e clássica, ideal para combinações versáteis em qualquer ocasião.</p>
+                        <div class="preco">R$ 49,00</div>
+                    </div>
+                </div>
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Camiseta+Grafite" alt="Camiseta Grafite Estilosa">
+                    <div class="produto-info">
+                        <h4>Camiseta Grafite Estilosa</h4>
+                        <p>Estilo urbano com um toque descolado. Perfeita para quem ama a moda casual com personalidade.</p>
+                        <div class="preco">R$ 65,00</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="product-category-title">Calças</h3>
+            <div class="grid-produtos">
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Calça+Jeans" alt="Calça Jeans Slim">
+                    <div class="produto-info">
+                        <h4>Calça Jeans Slim</h4>
+                        <p>Jeans com modelagem slim, confortável e ajustada ao corpo. Ideal para looks urbanos.</p>
+                        <div class="preco">R$ 139,00</div>
+                    </div>
+                </div>
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Calça+Cargo" alt="Calça Cargo Militar">
+                    <div class="produto-info">
+                        <h4>Calça Cargo Militar</h4>
+                        <p>Calça cargo com bolsos laterais, perfeita para um estilo casual e prático.</p>
+                        <div class="preco">R$ 129,00</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="avaliacoes" class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="avaliacoes-grid">
+                <div class="avaliacao-item">
+                    <div class="nota-estrelas">
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                    </div>
+                    <p class="comentario">"Entrega rápida e produto de alta qualidade! A camiseta é exatamente como na foto."</p>
+                    <p class="autor">- Ana S.</p>
+                </div>
+                <div class="avaliacao-item">
+                    <div class="nota-estrelas">
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela">&#9733;</span>
+                        <span class="estrela-vazia">&#9734;</span>
+                    </div>
+                    <p class="comentario">"Adorei o vestido floral! O tecido é macio e o caimento é perfeito. Recomendo!"</p>
+                    <p class="autor">- Beatriz C.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="container">
+            <h2>Entre em Contato</h2>
+            <p>Se tiver alguma dúvida, entre em contato conosco:</p>
+            <p>E-mail: <a href="mailto:contato@lojaroupas.com">contato@lojaroupas.com</a></p>
+            <p>Telefone: (11) 99999-9999</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Loja de Roupas. Todos os direitos reservados.</p>
         </div>
-      </div>
-      <div class="produto-item">
-        <img src="camiseta-grafite.png" alt="Camiseta Grafite Estilosa" />
-        <div class="produto-info">
-          <h3>Camiseta Grafite Estilosa</h3>
-          <p>Estilo urbano com um toque descolado. Perfeita para quem ama a moda casual com personalidade.</p>
-          <div class="preco">R$ 65,00</div>
-        </div>
-      </div>
+    </footer>
 
-      <!-- Calças -->
-      <div class="subtitulo-produto">Calças</div>
-
-      <div class="produto-item">
-        <img src="calca-jeans.png" alt="Calça Jeans Slim" />
-        <div class="produto-info">
-          <h3>Calça Jeans Slim</h3>
-          <p>Jeans com modelagem slim, confortável e ajustada ao corpo. Ideal para looks urbanos.</p>
-          <div class="preco">R$ 139,00</div>
-        </div>
-      </div>
-      <div class="produto-item">
-        <img src="calca-cargo.png" alt="Calça Cargo Militar" />
-        <div class="produto-info">
-          <h3>Calça Cargo Militar</h3>
-          <p>Calça cargo com bolsos laterais, perfeita para um estilo casual e prático.</p>
-          <div class="preco">R$ 129,00</div>
-        </div>
-      </div>
-
-      <!-- Vestidos -->
-      <div class="subtitulo-produto">Vestidos</div>
-
-      <div class="produto-item">
-        <img src="vestido-floral.png" alt="Vestido Floral Elegante" />
-        <div class="produto-info">
-          <h3>Vestido Floral Elegante</h3>
-          <p>Vestido de verão com estampa floral delicada. Perfeito para eventos casuais e descontraídos.</p>
-          <div class="preco">R$ 179,00</div>
-        </div>
-      </div>
-      <div class="produto-item">
-        <img src="vestido-preto.png" alt="Vestido Preto Básico" />
-        <div class="produto-info">
-          <h3>Vestido Preto Básico</h3>
-          <p>Um
-<section id="produtos" class="container">
-  <h2>Nosso Catálogo</h2>
-
-  <h3>Camisetas</h3>
-  <div class="grid-produtos">
-    <div class="produto-item">
-      <img src="camiseta-preta.png" alt="Camiseta Preta Estilosa" />
-      <div class="produto-info">
-        <h3>Camiseta Preta Estilosa</h3>
-        <p>Camiseta básica preta com design minimalista e confortável, perfeita para o dia a dia.</p>
-        <div class="preco">R$ 59,00</div>
-      </div>
-    </div>
-    </div>
-
-  <h3>Calças</h3>
-  <div class="grid-produtos">
-    <div class="produto-item">
-      <img src="calca-jeans.png" alt="Calça Jeans Slim" />
-      <div class="produto-info">
-        <h3>Calça Jeans Slim</h3>
-        <p>Jeans com modelagem slim, confortável e ajustada ao corpo. Ideal para looks urbanos.</p>
-        <div class="preco">R$ 139,00</div>
-      </div>
-    </div>
-    </div>
-
-  <h3>Vestidos</h3>
-  <div class="grid-produtos">
-    <div class="produto-item">
-      <img src="vestido-floral.png" alt="Vestido Floral Elegante" />
-      <div class="produto-info">
-        <h3>Vestido Floral Elegante</h3>
-        <p>Vestido de verão com estampa floral delicada. Perfeito para eventos casuais e descontraídos.</p>
-        <div class="preco">R$ 179,00</div>
-      </div>
-    </div>
-    </div>
-</section>
+</body>
+</html>
