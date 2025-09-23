@@ -10,43 +10,42 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Importação da fonte do Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-        /* Estilos Globais e Reset Básico */
+        /* RESET BÁSICO */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        /* ESTILOS GERAIS */
         body {
             font-family: 'Lato', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            color: #444;
+            background-color: #f8f9fa;
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 0;
+            padding: 40px 0;
         }
 
         h1, h2, h3, h4 {
-            color: #222;
-            margin-bottom: 20px;
+            font-family: 'Oswald', sans-serif;
+            color: #2c3e50;
         }
 
-        /* Header e Navegação */
+        /* HEADER E NAVEGAÇÃO */
         header {
-            background-color: #222;
-            color: white;
-            padding: 1rem 0;
+            background-color: #ffffff;
+            color: #2c3e50;
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -60,120 +59,175 @@
 
         .logo {
             font-size: 1.8rem;
-            font-weight: bold;
+            font-weight: 700;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav ul li a {
-            color: white;
+            color: #2c3e50;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-weight: 700;
             transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #e74c3c;
+            color: #e67e22; /* Laranja mais vibrante */
         }
 
-        /* Seção Hero (Banner) */
+        /* SEÇÃO HERO (BANNER) */
         .hero {
-            background-image: url('https://via.placeholder.com/1600x600.png?text=Seu+Banner+de+Moda');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558769132-cb8a9d60914e?q=80&w=2940&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            height: 450px;
-            position: relative;
+            height: 500px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-        }
-
-        .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.4);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin: 0;
+            padding: 20px;
+        }
+        
+        .hero h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
         }
 
-        /* Seção de Produtos */
-        #produtos {
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #e67e22;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* SEÇÃO DIFERENCIAIS */
+        #diferenciais {
+            background-color: #f1f2f6;
             text-align: center;
         }
 
-        .product-category-title {
-            text-align: left;
-            margin-top: 40px;
-            font-size: 1.8rem;
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .diferencial-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .diferencial-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .diferencial-item h4 {
+            margin-top: 10px;
+        }
+
+        .diferencial-item img {
+            width: 60px;
+            height: 60px;
+        }
+
+        /* SEÇÃO PRODUTOS */
+        .produtos-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .produtos-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
         .grid-produtos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            padding-top: 20px;
         }
 
         .produto-item {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
+            text-align: center;
         }
 
         .produto-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
         .produto-item img {
             width: 100%;
-            height: auto;
+            height: 350px;
+            object-fit: cover;
             display: block;
         }
 
         .produto-info {
-            padding: 15px;
+            padding: 20px;
         }
 
         .produto-info h4 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 5px;
         }
 
         .produto-info p {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #777;
+            margin-bottom: 15px;
         }
 
         .preco {
-            font-size: 1.4rem;
-            color: #e74c3c;
+            font-size: 1.6rem;
+            color: #e67e22;
             font-weight: bold;
+            margin-bottom: 15px;
         }
 
-        /* Seção de Avaliações */
+        /* SEÇÃO AVALIAÇÕES */
         #avaliacoes {
+            background-color: #2c3e50;
+            color: white;
             text-align: center;
+        }
+
+        #avaliacoes h2 {
+            color: white;
         }
 
         .avaliacoes-grid {
@@ -183,10 +237,9 @@
         }
 
         .avaliacao-item {
-            background-color: white;
+            background-color: rgba(255,255,255,0.1);
             padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .nota-estrelas {
@@ -197,17 +250,17 @@
 
         .comentario {
             font-style: italic;
-            color: #555;
+            color: #ccc;
             margin-bottom: 15px;
         }
 
         .autor {
             font-weight: bold;
             text-align: right;
-            color: #444;
+            color: white;
         }
 
-        /* Seção de Contato */
+        /* SEÇÃO CONTATO */
         #contato {
             text-align: center;
         }
@@ -217,3 +270,183 @@
         }
 
         #contato a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #contato a:hover {
+            color: #d35400;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        /* MEDIA QUERIES (RESPONSIVIDADE) */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <h1 class="logo">Moda Exclusiva</h1>
+            <nav>
+                <ul>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#diferenciais">Vantagens</a></li>
+                    <li><a href="#avaliacoes">Avaliações</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Estilo que Reflete Sua Essência</h2>
+            <p>Descubra nossa coleção de roupas exclusivas, feitas com o máximo de conforto e qualidade para você brilhar.</p>
+            <a href="#produtos" class="btn">Explorar Coleção</a>
+        </section>
+
+        <section id="diferenciais" class="container">
+            <h2>Por Que Escolher a Moda Exclusiva?</h2>
+            <div class="diferenciais-grid">
+                <div class="diferencial-item">
+                    <img src="https://via.placeholder.com/60x60.png?text=✨" alt="Ícone de estrela">
+                    <h4>Design Exclusivo</h4>
+                    <p>Peças únicas e originais que garantem que seu estilo se destaque da multidão.</p>
+                </div>
+                <div class="diferencial-item">
+                    <img src="https://via.placeholder.com/60x60.png?text=🏆" alt="Ícone de troféu">
+                    <h4>Qualidade Superior</h4>
+                    <p>Materiais premium e acabamento impecável para roupas que duram e resistem ao tempo.</p>
+                </div>
+                <div class="diferencial-item">
+                    <img src="https://via.placeholder.com/60x60.png?text=🚚" alt="Ícone de caminhão">
+                    <h4>Entrega Rápida</h4>
+                    <p>Seu pedido chega rápido e seguro, garantindo que você desfrute da sua nova roupa o quanto antes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos" class="container">
+            <div class="produtos-header">
+                <h2>Catálogo de Produtos</h2>
+                <p>Confira nossa seleção de peças que unem moda, conforto e versatilidade.</p>
+            </div>
+            
+            <div class="grid-produtos">
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Camiseta+Preta" alt="Camiseta Preta Estilosa">
+                    <div class="produto-info">
+                        <h4>Camiseta Básica Preta</h4>
+                        <p>O item essencial para qualquer guarda-roupa. Conforto e elegância em uma única peça.</p>
+                        <div class="preco">R$ 59,00</div>
+                        <a href="#" class="btn btn-sm">Comprar Agora</a>
+                    </div>
+                </div>
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Calça+Jeans+Slim" alt="Calça Jeans Slim">
+                    <div class="produto-info">
+                        <h4>Calça Jeans Fit Slim</h4>
+                        <p>Modelagem moderna e ajustada que valoriza o corpo sem perder o conforto.</p>
+                        <div class="preco">R$ 139,00</div>
+                        <a href="#" class="btn btn-sm">Comprar Agora</a>
+                    </div>
+                </div>
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Vestido+Casual" alt="Vestido Floral Casual">
+                    <div class="produto-info">
+                        <h4>Vestido Floral de Verão</h4>
+                        <p>Leveza e fluidez para os dias quentes. Estampa delicada e caimento perfeito.</p>
+                        <div class="preco">R$ 179,00</div>
+                        <a href="#" class="btn btn-sm">Comprar Agora</a>
+                    </div>
+                </div>
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Jaqueta+Jeans" alt="Jaqueta Jeans Clássica">
+                    <div class="produto-info">
+                        <h4>Jaqueta Jeans Clássica</h4>
+                        <p>Uma peça atemporal que combina com tudo. Essencial para um estilo urbano e descolado.</p>
+                        <div class="preco">R$ 199,00</div>
+                        <a href="#" class="btn btn-sm">Comprar Agora</a>
+                    </div>
+                </div>
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Camiseta+Grafite" alt="Camiseta Grafite Estilosa">
+                    <div class="produto-info">
+                        <h4>Camiseta Grafite</h4>
+                        <p>Estilo urbano com um toque descolado. Perfeita para a moda casual com personalidade.</p>
+                        <div class="preco">R$ 65,00</div>
+                        <a href="#" class="btn btn-sm">Comprar Agora</a>
+                    </div>
+                </div>
+                <div class="produto-item">
+                    <img src="https://via.placeholder.com/300x400.png?text=Vestido+Preto" alt="Vestido Preto Básico">
+                    <div class="produto-info">
+                        <h4>Vestido Preto Elegante</h4>
+                        <p>Um clássico versátil que transita entre o casual e o formal com facilidade.</p>
+                        <div class="preco">R$ 159,00</div>
+                        <a href="#" class="btn btn-sm">Comprar Agora</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="avaliacoes" class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="avaliacoes-grid">
+                <div class="avaliacao-item">
+                    <div class="nota-estrelas">
+                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                    </div>
+                    <p class="comentario">"A qualidade das roupas superou minhas expectativas! O caimento é perfeito e a entrega foi super rápida."</p>
+                    <p class="autor">- Ana S.</p>
+                </div>
+                <div class="avaliacao-item">
+                    <div class="nota-estrelas">
+                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9734;</span>
+                    </div>
+                    <p class="comentario">"Adorei o design exclusivo das peças. É visível o cuidado em cada detalhe. O site é fácil de usar e o suporte é excelente."</p>
+                    <p class="autor">- Beatriz C.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="container">
+            <h2>Entre em Contato</h2>
+            <p>Se tiver alguma dúvida, entre em contato conosco:</p>
+            <p>E-mail: <a href="mailto:contato@lojaroupas.com">contato@lojaroupas.com</a></p>
+            <p>Telefone: (11) 99999-9999</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Moda Exclusiva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
