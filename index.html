@@ -252,6 +252,37 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Novas seções de segurança e pagamentos */
+    #seguranca-pagamentos {
+      background-color: #222;
+      color: var(--amarelo);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #seguranca-pagamentos h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .icons img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+
+    .icons img:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
@@ -281,6 +312,7 @@
   <section>
     <h2>Coleções Exclusivas</h2>
     <div class="colecoes">
+      <!-- Primeira Coleção -->
       <div class="colecao-item">
         <img src="colecao1.jpg" alt="Coleção 1">
         <div class="info">
@@ -289,6 +321,8 @@
           <a href="#" class="btn-colecao">Ver Coleção</a>
         </div>
       </div>
+
+      <!-- Segunda Coleção -->
       <div class="colecao-item">
         <img src="colecao2.jpg" alt="Coleção 2">
         <div class="info">
@@ -297,7 +331,37 @@
           <a href="#" class="btn-colecao">Ver Coleção</a>
         </div>
       </div>
-      <!-- Adicionar mais coleções aqui -->
+
+      <!-- Nova Coleção: Moletom Street Men -->
+      <div class="colecao-item">
+        <img src="moletom-streetmen.jpg" alt="Moletom Street Men">
+        <div class="info">
+          <h3>Moletom Street Men</h3>
+          <p>Perfeito para os dias mais frios, mas com o estilo das ruas que você adora.</p>
+          <a href="#" class="btn-colecao">Comprar Agora</a>
+        </div>
+      </div>
+
+      <!-- Nova Coleção: Jaqueta Oversized -->
+      <div class="colecao-item">
+        <img src="jaqueta-oversized.jpg" alt="Jaqueta Oversized">
+        <div class="info">
+          <h3>Jaqueta Oversized</h3>
+          <p>A jaqueta oversized é a peça-chave da temporada.</p>
+          <a href="#" class="btn-colecao">Comprar Agora</a>
+        </div>
+      </div>
+
+      <!-- Nova Coleção: Camiseta Street Art -->
+      <div class="colecao-item">
+        <img src="camiseta-streetart.jpg" alt="Camiseta Street Art">
+        <div class="info">
+          <h3>Camiseta Street Art</h3>
+          <p>Design exclusivo e confortável para quem ama o estilo urbano.</p>
+          <a href="#" class="btn-colecao">Comprar Agora</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -318,6 +382,17 @@
     </form>
   </section>
 
+  <!-- Segurança e Formas de Pagamento -->
+  <section id="seguranca-pagamentos">
+    <h3>Segurança e Formas de Pagamento</h3>
+    <p>Compre com segurança e conveniência, usando os métodos de pagamento mais populares.</p>
+    <div class="icons">
+      <img src="google-security-icon.png" alt="Google Segurança">
+      <img src="visa-icon.png" alt="Visa">
+      <img src="mastercard-icon.png" alt="Mastercard">
+      <img src="paypal-icon.png" alt="Paypal">
+    </div>
+  </section>
+
 </body>
 </html>
-
